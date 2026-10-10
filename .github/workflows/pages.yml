@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/gracious-hopper-9jiplv]
   workflow_dispatch:
 
 permissions:
