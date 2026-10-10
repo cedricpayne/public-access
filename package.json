@@ -1,0 +1,14 @@
+{
+  "name": "access-stills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static micro-site for searching frame stills from public access and community television, powered by the Internet Archive.",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8080 --bind 127.0.0.1",
+    "check": "node --check js/ia.js && node --check js/app.js && python3 -I -c \"import json; json.load(open('data/catalog.json'))\" && echo ok",
+    "test": "node --test",
+    "test:e2e": "node scripts/e2e.mjs"
+  },
+  "license": "MIT"
+}

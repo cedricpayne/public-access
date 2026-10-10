@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Access Stills</title>
+  <meta name="description" content="Search frame stills from public access and community television shows around the world, drawn live from the Internet Archive.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#results">Skip to results</a>
+
+  <header class="masthead">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="4" y="12" width="40" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+        <path d="M16 4l8 8 8-8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="9" y="17" width="24" height="18" rx="2" fill="currentColor" opacity=".25"/>
+        <circle cx="39" cy="22" r="1.8" fill="currentColor"/>
+        <circle cx="39" cy="29" r="1.8" fill="currentColor"/>
+      </svg>
+      <div>
+        <h1>Access Stills</h1>
+        <p class="tagline">Frame stills from public access &amp; community television, worldwide.</p>
+      </div>
+    </div>
+
+    <form id="search-form" class="search" role="search" autocomplete="off">
+      <label class="sr-only" for="q">Search shows</label>
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" name="q" type="search" placeholder="Try “puppet”, “call-in”, “Offener Kanal”, “wrestling 1989”…" spellcheck="false">
+        <kbd title="Press / to focus">/</kbd>
+      </div>
+      <button type="submit" class="btn primary">Search</button>
+      <button type="button" class="btn" id="random-btn" title="Pick a random station and page">Surprise me</button>
+    </form>
+
+    <div class="controls">
+      <label class="control">
+        <span>Sort</span>
+        <select id="sort">
+          <option value="">Relevance</option>
+          <option value="downloads desc">Most viewed</option>
+          <option value="date asc">Oldest first</option>
+          <option value="date desc">Newest first</option>
+          <option value="addeddate desc">Recently added</option>
+        </select>
+      </label>
+      <label class="control">
+        <span>Era</span>
+        <select id="era"><option value="">Any</option></select>
+      </label>
+      <label class="control">
+        <span>Region</span>
+        <select id="region"><option value="">Anywhere</option></select>
+      </label>
+      <label class="control toggle">
+        <input type="checkbox" id="scope" checked>
+        <span>Limit to public access &amp; community TV</span>
+      </label>
+      <div class="view-switch" role="group" aria-label="View">
+        <button type="button" class="chip is-active" data-view="stills" aria-pressed="true">Stills wall</button>
+        <button type="button" class="chip" data-view="shows" aria-pressed="false">By show</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="browse" class="browse" aria-labelledby="browse-heading">
+      <div class="browse-head">
+        <h2 id="browse-heading">Start somewhere</h2>
+        <button type="button" class="linklike" id="browse-toggle" aria-expanded="true" aria-controls="browse">Hide</button>
+      </div>
+      <p class="muted">Pick a station or a theme, or type anything above. Every still comes straight from the <a href="https://archive.org/details/community_media" rel="noopener" target="_blank">Internet Archive</a>.</p>
+      <div id="regions" class="regions"></div>
+      <h3>Themes</h3>
+      <div id="topics" class="chips"></div>
+    </section>
+
+    <section id="results" class="results" aria-live="polite" aria-busy="false">
+      <div class="results-head">
+        <h2 id="results-title">Results</h2>
+        <p id="results-meta" class="muted"></p>
+      </div>
+      <div id="status" class="status" hidden></div>
+      <div id="wall" class="wall" hidden></div>
+      <div id="shows" class="shows" hidden></div>
+      <div class="more">
+        <button type="button" class="btn" id="more-btn" hidden>Load more</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Stills are frame thumbnails that the Internet Archive derives from each uploaded video, shown as-is. Rights stay with the original producers and stations. Nothing is stored on this site.</p>
+    <p><a href="https://github.com/cedricpayne/public-access" rel="noopener" target="_blank">Source</a> · <a href="#" id="about-link">How this works</a></p>
+  </footer>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Still viewer">
+    <button type="button" class="lb-close" data-action="close" aria-label="Close">×</button>
+    <button type="button" class="lb-nav prev" data-action="prev" aria-label="Previous still">‹</button>
+    <figure>
+      <img id="lb-img" alt="">
+      <figcaption>
+        <div class="lb-title" id="lb-title"></div>
+        <div class="lb-sub muted" id="lb-sub"></div>
+        <div class="lb-links">
+          <a id="lb-item" href="#" target="_blank" rel="noopener">Watch on archive.org</a>
+          <a id="lb-file" href="#" target="_blank" rel="noopener" download>Open still</a>
+          <button type="button" class="linklike" data-action="copy">Copy link</button>
+        </div>
+      </figcaption>
+    </figure>
+    <button type="button" class="lb-nav next" data-action="next" aria-label="Next still">›</button>
+  </dialog>
+
+  <dialog id="about" class="about" aria-labelledby="about-title">
+    <h2 id="about-title">How this works</h2>
+    <p>This is a static page with no server. Your browser queries the Internet Archive's search API for video items that describe themselves as public access or community television, then asks the metadata API for each item's derived frame thumbnails and lays those out as a wall of stills.</p>
+    <p>The curated stations and themes live in <code>data/catalog.json</code>. Each entry is just an Internet Archive search query, so adding a station from your part of the world is a one-line edit.</p>
+    <p>Untick “Limit to public access &amp; community TV” to search every video on the Archive instead.</p>
+    <form method="dialog"><button class="btn primary">Close</button></form>
+  </dialog>
+
+  <template id="still-tpl">
+    <figure class="still">
+      <button type="button" class="still-btn">
+        <img loading="lazy" decoding="async" alt="">
+      </button>
+      <figcaption>
+        <span class="still-title"></span>
+        <span class="still-meta muted"></span>
+      </figcaption>
+    </figure>
+  </template>
+
+  <template id="show-tpl">
+    <article class="show">
+      <header>
+        <h3 class="show-title"></h3>
+        <p class="show-meta muted"></p>
+      </header>
+      <div class="strip" role="list"></div>
+      <p class="show-desc"></p>
+      <p class="show-links"><a class="show-link" target="_blank" rel="noopener">Watch on archive.org</a></p>
+    </article>
+  </template>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

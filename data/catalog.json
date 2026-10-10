@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "about": "Curated entry points into public access / community television held at the Internet Archive. Each preset is an Internet Archive advanced-search query (Lucene syntax). Edit freely; the site reloads this file on every visit.",
+  "defaultScope": "(collection:community_media OR subject:(\"public access\" OR \"public access television\" OR \"community television\" OR \"community media\" OR \"cable access\" OR \"community tv\" OR \"offener kanal\" OR \"öppna kanalen\" OR \"open kanaal\" OR \"télévision communautaire\" OR \"tv comunitária\" OR \"televisión comunitaria\") OR description:(\"public access\" OR \"community television\" OR \"cable access\" OR \"community access\"))",
+  "regions": [
+    {
+      "id": "north-america",
+      "name": "North America",
+      "blurb": "The birthplace of cable public access. Franchise agreements from the 1970s onward obliged cable operators to hand channels to the public, and thousands of hours survive in the Community Media Archive.",
+      "stations": [
+        { "name": "Community Media Archive", "place": "United States", "q": "collection:community_media", "note": "The umbrella collection for dozens of US access centers." },
+        { "name": "Brattleboro Community TV", "place": "Vermont, USA", "q": "\"Brattleboro Community Television\" OR BCTV", "note": "One of the most prolific small-town uploaders." },
+        { "name": "Manhattan Neighborhood Network", "place": "New York City, USA", "q": "\"Manhattan Neighborhood Network\" OR MNN" },
+        { "name": "Denver Open Media", "place": "Colorado, USA", "q": "\"Denver Open Media\"" },
+        { "name": "Austin Community Television", "place": "Texas, USA", "q": "\"Austin Community Television\" OR ACTV OR \"Austin Public Access\"" },
+        { "name": "Boston Neighborhood Network", "place": "Massachusetts, USA", "q": "\"Boston Neighborhood Network\" OR BNN" },
+        { "name": "Cambridge Community Television", "place": "Massachusetts, USA", "q": "\"Cambridge Community Television\" OR CCTV" },
+        { "name": "Portland Community Media", "place": "Oregon, USA", "q": "\"Portland Community Media\" OR \"Open Signal\"" },
+        { "name": "Chicago Access Network", "place": "Illinois, USA", "q": "\"Chicago Access Network\" OR CAN-TV" },
+        { "name": "Davis Media Access", "place": "California, USA", "q": "\"Davis Media Access\" OR \"Davis Community Television\"" },
+        { "name": "Amherst Media", "place": "Massachusetts, USA", "q": "\"Amherst Media\" OR \"Amherst Community Television\"" },
+        { "name": "Falls Church Cable", "place": "Virginia, USA", "q": "\"Falls Church\" public access" },
+        { "name": "Rogers TV / Shaw TV", "place": "Canada", "q": "\"Rogers TV\" OR \"Rogers Cable\" OR \"Shaw TV\" OR \"Cable 10\" community" },
+        { "name": "Télévision communautaire", "place": "Québec, Canada", "q": "\"télévision communautaire\" OR \"TV communautaire\" OR TVC" }
+      ]
+    },
+    {
+      "id": "europe",
+      "name": "Europe",
+      "blurb": "Germany's Offene Kanäle, the Dutch lokale omroepen and Scandinavia's open channels gave citizens airtime by statute rather than by cable franchise.",
+      "stations": [
+        { "name": "Offener Kanal", "place": "Germany", "q": "\"Offener Kanal\" OR \"Offene Kanäle\" OR Bürgerfernsehen OR Bürgerrundfunk" },
+        { "name": "ALEX Berlin (ex Offener Kanal Berlin)", "place": "Berlin, Germany", "q": "\"Offener Kanal Berlin\" OR \"ALEX Berlin\"" },
+        { "name": "TIDE Hamburg", "place": "Hamburg, Germany", "q": "\"TIDE Hamburg\" OR \"Offener Kanal Hamburg\"" },
+        { "name": "SALTO Amsterdam", "place": "Netherlands", "q": "SALTO Amsterdam OR \"Open Kanaal\" OR \"lokale omroep\"" },
+        { "name": "Öppna Kanalen", "place": "Sweden", "q": "\"Öppna Kanalen\" OR \"Oppna Kanalen\" OR \"Open Channel Stockholm\"" },
+        { "name": "Åpen Kanal", "place": "Norway", "q": "\"Åpen Kanal\" OR \"Apen Kanal\" OR \"Frikanalen\"" },
+        { "name": "Kanal København", "place": "Denmark", "q": "\"Kanal København\" OR \"Kanal Kobenhavn\" OR \"Københavns Nærradio og TV\"" },
+        { "name": "Open Door & community channels", "place": "United Kingdom", "q": "\"Open Door\" BBC OR \"community channel\" OR \"Sheffield Live\" OR \"Notts TV\" OR \"Video Nation\"" },
+        { "name": "Télévision associative", "place": "France", "q": "\"télévision associative\" OR \"télé locale\" OR \"Télé Bocal\" OR \"Zalea TV\"" },
+        { "name": "Televisión comunitaria", "place": "Spain", "q": "\"televisión comunitaria\" OR \"televisión local\" OR \"Tele K\"" }
+      ]
+    },
+    {
+      "id": "oceania",
+      "name": "Australia & New Zealand",
+      "blurb": "Australia licensed community television stations in the capital cities from the 1990s, and the Channel 31 family became cult viewing before the spectrum was reclaimed.",
+      "stations": [
+        { "name": "Channel 31 Melbourne", "place": "Melbourne, Australia", "q": "\"Channel 31\" OR C31 Melbourne \"community television\"" },
+        { "name": "TVS Sydney", "place": "Sydney, Australia", "q": "\"TVS Sydney\" OR \"Television Sydney\" \"community television\"" },
+        { "name": "Access 31 Perth", "place": "Perth, Australia", "q": "\"Access 31\" OR \"West TV\" Perth" },
+        { "name": "Briz 31", "place": "Brisbane, Australia", "q": "\"Briz 31\" OR \"31 Digital\" Brisbane" },
+        { "name": "C44 Adelaide", "place": "Adelaide, Australia", "q": "\"C44\" OR \"Channel 44\" Adelaide" },
+        { "name": "Triangle TV / Face TV", "place": "Auckland, New Zealand", "q": "\"Triangle TV\" OR \"Face TV\" OR \"Triangle Television\"" },
+        { "name": "CTV Canterbury", "place": "Christchurch, New Zealand", "q": "\"Canterbury Television\" OR \"CTV Christchurch\"" }
+      ]
+    },
+    {
+      "id": "latin-america",
+      "name": "Latin America",
+      "blurb": "Community and neighbourhood television flourished in the 1990s and 2000s through cable set-asides and grassroots collectives.",
+      "stations": [
+        { "name": "TV Comunitária do Rio", "place": "Rio de Janeiro, Brazil", "q": "\"TV Comunitária\" Rio" },
+        { "name": "Canal Comunitário", "place": "Brazil", "q": "\"Canal Comunitário\" OR \"TV Comunitária\"" },
+        { "name": "Barricada TV", "place": "Buenos Aires, Argentina", "q": "\"Barricada TV\" OR \"televisión comunitaria\" Argentina" },
+        { "name": "Televisión comunitaria", "place": "Latin America", "q": "\"televisión comunitaria\" OR \"canal comunitario\" OR \"tv comunitaria\"" }
+      ]
+    },
+    {
+      "id": "africa-middle-east-asia",
+      "name": "Africa, Middle East & Asia",
+      "blurb": "Newer community television licences, from Soweto to Tel Aviv, plus scattered volunteer-made programming elsewhere.",
+      "stations": [
+        { "name": "Soweto TV", "place": "Johannesburg, South Africa", "q": "\"Soweto TV\" OR \"community television\" Johannesburg" },
+        { "name": "Cape Town TV", "place": "Cape Town, South Africa", "q": "\"Cape Town TV\" OR CTV \"Cape Town\" community" },
+        { "name": "Community Channel 98", "place": "Israel", "q": "\"Community Channel\" Israel OR \"הערוץ הקהילתי\"" },
+        { "name": "Community broadcasting", "place": "Asia", "q": "\"community television\" (Japan OR Korea OR India OR Philippines OR Taiwan)" }
+      ]
+    }
+  ],
+  "topics": [
+    { "name": "Call-in shows", "q": "\"call-in\" OR \"call in show\" OR phone-in" },
+    { "name": "Cooking", "q": "cooking OR recipe OR kitchen" },
+    { "name": "Music & bands", "q": "band OR concert OR \"music video\" OR \"live music\"" },
+    { "name": "Wrestling", "q": "wrestling OR wrestlers" },
+    { "name": "Puppets & kids", "q": "puppet OR puppets OR \"children's show\" OR kids" },
+    { "name": "Psychics & the occult", "q": "psychic OR tarot OR astrology OR paranormal" },
+    { "name": "Horror hosts", "q": "\"horror host\" OR \"creature feature\" OR \"monster movie\"" },
+    { "name": "Exercise", "q": "exercise OR aerobics OR fitness OR yoga" },
+    { "name": "City council & civics", "q": "\"city council\" OR \"select board\" OR \"school board\" OR \"town meeting\"" },
+    { "name": "Religion", "q": "church OR ministry OR gospel OR sermon" },
+    { "name": "Karaoke & talent", "q": "karaoke OR talent OR \"open mic\"" },
+    { "name": "Comedy & sketch", "q": "comedy OR sketch OR satire OR parody" },
+    { "name": "Interviews & talk", "q": "interview OR \"talk show\"" },
+    { "name": "Art & film", "q": "\"video art\" OR experimental OR filmmaker OR artist" },
+    { "name": "Parades & festivals", "q": "parade OR festival OR fair" },
+    { "name": "Public affairs", "q": "election OR candidate OR debate OR forum" }
+  ],
+  "eras": [
+    { "name": "1970s", "from": "1970-01-01", "to": "1979-12-31" },
+    { "name": "1980s", "from": "1980-01-01", "to": "1989-12-31" },
+    { "name": "1990s", "from": "1990-01-01", "to": "1999-12-31" },
+    { "name": "2000s", "from": "2000-01-01", "to": "2009-12-31" },
+    { "name": "2010s", "from": "2010-01-01", "to": "2019-12-31" },
+    { "name": "2020s", "from": "2020-01-01", "to": "2029-12-31" }
+  ]
+}
