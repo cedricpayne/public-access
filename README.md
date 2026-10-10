@@ -40,7 +40,11 @@ npm i -D playwright && npm run test:e2e
 
 ## Deploy
 
-The repo ships a GitHub Pages workflow (`.github/workflows/pages.yml`). Enable Pages with *Source: GitHub Actions* in the repository settings, push to `main`, and the site is live. Any static host works just as well.
+**Vercel (recommended).** Import the repository at <https://vercel.com/new>, leave the framework preset on *Other*, and deploy. `vercel.json` already tells Vercel there is no build step and sets cache headers. Every push to the production branch redeploys, and every other branch gets a preview URL. From a terminal, `npx vercel` from the repo root does the same.
+
+**GitHub Pages.** `.github/workflows/pages.yml` is a manual workflow: enable Pages with *Source: GitHub Actions* in the repository settings, then run the workflow from the Actions tab.
+
+Any other static host works just as well; there is nothing to build.
 
 ## Layout
 

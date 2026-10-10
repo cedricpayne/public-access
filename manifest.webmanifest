@@ -1,0 +1,12 @@
+{
+  "name": "Access Stills",
+  "short_name": "Access Stills",
+  "description": "Frame stills from public access and community television, worldwide.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#ffb454",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
