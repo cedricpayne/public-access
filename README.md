@@ -42,6 +42,8 @@ npm i -D playwright && npm run test:e2e
 
 **Vercel (recommended).** Import the repository at <https://vercel.com/new>, leave the framework preset on *Other*, and deploy. `vercel.json` already tells Vercel there is no build step and sets cache headers. Every push to the production branch redeploys, and every other branch gets a preview URL. From a terminal, `npx vercel` from the repo root does the same.
 
+**Sharing and passwords.** The production URL is public. To put the whole site behind a password, add an environment variable `SITE_PASSWORD` (and optionally `SITE_USER`, default `guest`) in the Vercel project settings and redeploy; `middleware.js` then asks every visitor for it with the browser's own prompt. Remove the variable to make it public again.
+
 **GitHub Pages.** `.github/workflows/pages.yml` is a manual workflow: enable Pages with *Source: GitHub Actions* in the repository settings, then run the workflow from the Actions tab.
 
 Any other static host works just as well; there is nothing to build.
